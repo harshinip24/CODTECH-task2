@@ -11,7 +11,9 @@ Duration:July to August 2024
 Mentor:NEELA SANTHOSH KUMAR
 
 OVERVIEW OF THIS PROJECT:
+
 Project:Vulnerability Scanning Tool
+
 Objective
 The provided Java code demonstrates a basic network port scanner. This tool scans a given IP address to identify open ports within a specified range.
 
