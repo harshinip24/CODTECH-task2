@@ -1,0 +1,28 @@
+//This is a basic example of a network port scanner, which is a common feature of vulnerability scanners. 
+This example will scan a given IP address for open ports within a specified range.//
+import java.io.IOException;
+import java.net.InetSocketAddress;
+import java.net.Socket;
+public class SimpleportScanner {
+    public static void main(String[] args) {
+        if (args.length < 1) {
+            System.out.println("Usage: java SimplePortScanner <IP> [startPort] [endPort]");
+            return;
+        }
+        String ipAddress = args[0];
+        int startPort = args.length > 1 ? Integer.parseInt(args[1]) : 1;
+        int endPort = args.length > 2 ? Integer.parseInt(args[2]) : 65535;
+        scanPorts(ipAddress, startPort, endPort);
+    }
+    public static void scanPorts(String ipAddress, int startPort, int endPort) {
+        System.out.println("Scanning ports from " + startPort + " to " + endPort + " on " + ipAddress);   
+        for (int port = startPort; port <= endPort; port++) {
+            try (Socket socket = new Socket()) {
+                socket.connect(new InetSocketAddress(ipAddress, port), 100);
+                System.out.println("Port " + port + " is open");
+            } catch (IOException e) {
+            }
+        }       
+        System.out.println("Scanning completed.");
+    }
+}
