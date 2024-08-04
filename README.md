@@ -43,3 +43,7 @@ Key Activities:
      - If the connection is successful within the specified timeout (100 milliseconds), it prints that the port is open.
      - If the connection fails (throws an IOException), it means the port is closed or not reachable.
    - Completion Message: Prints a message indicating the scan is complete.
+
+   OUTPUT:
+   ![image](https://github.com/user-attachments/assets/590cbb11-bd74-4cdf-b69e-3c98aa5a61cf)
+
